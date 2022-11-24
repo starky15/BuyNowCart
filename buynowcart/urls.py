@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home')
-]
+
+# By default, Django doesn't serve media files during development( when debug=True).
+# In order to make the development server serve the media files open the url.py of the project and make the below changes.
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
