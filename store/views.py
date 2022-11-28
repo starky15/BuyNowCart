@@ -8,6 +8,7 @@ def store(request, category_slug=None):
     if category_slug != None:
         category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.all().filter(category=category ,is_available=True)
+        
     context = {
         'products': products,
         'count': len(products)
