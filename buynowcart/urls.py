@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
+    path('cart/', include('carts.urls'))
 
 # By default, Django doesn't serve media files during development( when debug=True).
 # In order to make the development server serve the media files open the url.py of the project and make the below changes.
