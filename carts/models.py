@@ -18,3 +18,7 @@ class CartItem(models.Model):
 
     def __str__(self):
         return self.product
+
+
+    def get_price_products(self):
+        return self.product.price * self.quantity
